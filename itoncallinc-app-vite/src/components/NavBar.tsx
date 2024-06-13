@@ -1,28 +1,89 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { Button, DropdownMenu } from "@radix-ui/themes";
+import { TfiMenuAlt } from "react-icons/tfi";
+import Style from "../components/headFoot.module.css";
 
 const NavBar = () => {
   const menuLinks = [
-    { label: "home", href: "/" },
-    { label: "R&D", href: "/" },
-    { label: "Strategy Planning & Execution", href: "/" },
-    { label: "Resource Management", href: "/" },
-    { label: "Qualified Candidate Managment", href: "/" },
-    { label: "Our Company", href: "/" },
+    { label: "R&D", href: "/research-development" },
+    { label: "Strategy Consulting", href: "/consulting" },
+    { label: "Big Data", href: "/planning-execution" },
+    { label: "Industries", href: "/industries" },
+    { label: "Recruit & Staff", href: "/recruiting" },
+    { label: "Our Company", href: "/about-itoncall" },
+    { label: "Careers", href: "/careers" },
   ];
+
+  const contactTex = "Contact Us";
 
   return (
     <>
-      <nav className="space-x-20 border-b mb-5 px-5 h-20 items-center grid grid-cols-3">
-        <div className="md:h-20 md:w-40 w-40 h-15 relative"></div>
-        <div>Placeholder</div>
-        <ul className="flex space-x-6 mr-20">
-        {menuLinks.map((link) => {
-          return <li><a className="no-underline hover:underline" href={link.href}>{link.label}</a></li>;
-        })}
-      </ul>
-      </nav>
+      <nav
+        id="navigation"
+        className="space-x-20 border-b px-5 h-20 items-center grid grid-cols-3"
+      >
+        <div
+          id="header-logo"
+          className=" flex relative items-center col-span-2 " //md:h-20 md:w-80 h-15
+        >
+          <img
+            className={Style.logoAttribute}
+            alt="I.T. ON CALL INC."
+            src="/itoncall-logo.png"
+          />
+          <div className="text-x font-bold ml-5 ">I.T. ON CALL INC</div>
+        </div>
 
+        <menu
+          id="menu"
+          className="hidden md:flex space-x-6 mr-20 justify-end" // col-span-2
+        >
+          {menuLinks.map((link) => {
+            return (
+              <li key={link.href}>
+                <a className="no-underline" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+          <li key="break">|</li>
+          <li key="contact">
+            <a className="no-underline" href="/contact-us">
+              {contactTex}
+            </a>
+          </li>
+        </menu>
+        <aside className="flex lg:hidden space-x-6 mr-20 justify-end ">
+          <DropdownMenu.Root>
+            <DropdownMenu.Trigger>
+              <Button variant="soft">
+                <TfiMenuAlt />
+                <DropdownMenu.TriggerIcon />
+              </Button>
+            </DropdownMenu.Trigger>
+            <DropdownMenu.Content>
+              {menuLinks.map((link) => {
+                return (
+                  <DropdownMenu.Item
+                    className="no-underline"
+                    key={link.href}
+                    href={link.href}
+                  >
+                    {link.label}
+                  </DropdownMenu.Item>
+                );
+              })}
+              <DropdownMenu.Item
+                className="no-underline"
+                key="contact"
+                href="/contact-us"
+              >
+                {contactTex}
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu.Root>
+        </aside>
+      </nav>
     </>
   );
 };
