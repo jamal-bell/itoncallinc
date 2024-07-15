@@ -1,6 +1,6 @@
 import { Button, DropdownMenu } from "@radix-ui/themes";
 import { TfiMenuAlt } from "react-icons/tfi";
-import Style from "../components/headFoot.module.css";
+import Style from "../components/CustomStyle.module.css";
 
 const NavBar = () => {
   const menuLinks = [
@@ -19,11 +19,11 @@ const NavBar = () => {
     <>
       <nav
         id="navigation"
-        className="space-x-20 border-b px-5 h-20 items-center grid grid-cols-3"
+        className="space-x-20 border-b px-2 h-20 items-center grid grid-cols-3"
       >
         <div
           id="header-logo"
-          className=" flex relative items-center col-span-2 " //md:h-20 md:w-80 h-15
+          className="flex relative items-center col-span-2" //md:h-20 md:w-80 h-15
         >
           <img
             className={Style.logoAttribute}
@@ -56,12 +56,12 @@ const NavBar = () => {
         <aside className="flex lg:hidden space-x-6 mr-20 justify-end ">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
-              <Button variant="soft">
+              <Button variant="soft" aria-label="menu icon">
                 <TfiMenuAlt />
                 <DropdownMenu.TriggerIcon />
               </Button>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content className="width: 100%">
               {menuLinks.map((link) => {
                 return (
                   <DropdownMenu.Item
