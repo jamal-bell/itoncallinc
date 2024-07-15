@@ -1,25 +1,16 @@
 import { Button, DropdownMenu } from "@radix-ui/themes";
 import { TfiMenuAlt } from "react-icons/tfi";
-import Style from "../components/CustomStyle.module.css";
+import Style from "../components/ComponentStyle.module.css";
+import { menuLinks } from "./MenuList.module";
 
 const NavBar = () => {
-  const menuLinks = [
-    { label: "R&D", href: "/research-development" },
-    { label: "Strategy Consulting", href: "/consulting" },
-    { label: "Big Data", href: "/planning-execution" },
-    { label: "Industries", href: "/industries" },
-    { label: "Recruit & Staff", href: "/recruiting" },
-    { label: "Our Company", href: "/about-itoncall" },
-    { label: "Careers", href: "/careers" },
-  ];
-
   const contactTex = "Contact Us";
 
   return (
     <>
       <nav
         id="navigation"
-        className="space-x-20 border-b px-2 h-20 items-center grid grid-cols-3"
+        className=" fixed space-x-20 border-b px-2 h-20 items-center grid grid-cols-3  bg-white"
       >
         <div
           id="header-logo"
@@ -53,7 +44,7 @@ const NavBar = () => {
             </a>
           </li>
         </menu>
-        <aside className="flex lg:hidden space-x-6 mr-20 justify-end ">
+        <aside className="flex lg:hidden space-x-6 mr-20 justify-end">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
               <Button variant="soft" aria-label="menu icon">
@@ -61,7 +52,7 @@ const NavBar = () => {
                 <DropdownMenu.TriggerIcon />
               </Button>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="width: 100%">
+            <DropdownMenu.Content>
               {menuLinks.map((link) => {
                 return (
                   <DropdownMenu.Item

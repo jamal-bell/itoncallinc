@@ -1,0 +1,31 @@
+.logoAttribute {
+  width: 25%;
+}
+
+.missionBlock {
+  background-color: rgb(4, 60, 116);
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.missionBlock span {
+  font-size: 2em;
+}
+
+.sectionTitles {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 50px 0 20px;
+}
+
+.sectionTitles span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.tele {
+  text-decoration: none;
+}

@@ -1,0 +1,43 @@
+/* #abf {
+  padding-top: 10rem !important;
+} */
+
+section {
+  min-height: 30vw;
+}
+
+.missionBlock {
+  /* background-color: rgb(4, 60, 116); */
+  padding: 40px 20px;
+  color: white;
+  font-weight: 400;
+  background: url(../../assets/pexels-vikashkr50-19566202.jpg) no-repeat center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.missionBlock span {
+  font-size: 2em;
+}
+
+.sectionTitles {
+  width: 100%;
+  /* min-height: 80px; */
+  text-align: center;
+  border-top: 1px solid #555;
+  line-height: 0.1em;
+  margin: 30px 0 30px;
+}
+
+.sectionTitles span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+/* #rs {
+    background: 
+} */
+
+svg {
+  display: inline-block !important;
+}
