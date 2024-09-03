@@ -58,7 +58,7 @@ const NavBar = () => {
                   <DropdownMenu.Item
                     className="no-underline"
                     key={link.href}
-                    href={link.href}
+                    ref={link.href}
                   >
                     {link.label}
                   </DropdownMenu.Item>
@@ -67,7 +67,7 @@ const NavBar = () => {
               <DropdownMenu.Item
                 className="no-underline"
                 key="contact"
-                href="/contact-us"
+                ref="/contact-us"
               >
                 {contactTex}
               </DropdownMenu.Item>
